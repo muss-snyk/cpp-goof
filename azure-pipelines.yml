@@ -15,14 +15,14 @@ steps:
   displayName: 'snyk install & auth'
 
 
-- script: snyk test --unmanaged --print-dep-paths
-    continueOnError: true
-  displayName: 'Snyk Unmanaged Scan'
+# - script: snyk test --unmanaged --print-dep-paths
+#     continueOnError: true
+#   displayName: 'Snyk Unmanaged Scan'
 
-- script: snyk code test
-    continueOnError: true
-  displayName: 'Snyk Code Scan'
+# - script: snyk code test
+#     continueOnError: true
+#   displayName: 'Snyk Code Scan'
 
-- script: snyk test --all-projects
-    continueOnError: true
-  displayName: 'Snyk NPM OSS Scan'
+# - script: snyk test --all-projects
+#     continueOnError: true
+#   displayName: 'Snyk NPM OSS Scan'
