@@ -16,4 +16,19 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+      npm install snyk
+      snyk auth $(SNYK_TOKEN)
+    displayName: 'snyk install & auth'
+
+
+- script: snyk test --unmanaged --print-dep-paths
+    continueOnError: true
+    displayName: 'Snyk Unmanaged Scan'
+
+- script: snyk code test
+    continueOnError: true
+    displayName: 'Snyk Code Scan'
+
+- script: snyk test --all-projects
+    continueOnError: true
+    displayName: 'Snyk NPM OSS Scan'
