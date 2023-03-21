@@ -19,6 +19,11 @@ steps:
   continueOnError: true
   displayName: 'Snyk Unmanaged Scan'
 
+- script: snyk monitor --unmanaged 
+
+- script: snyk monitor --all-projects 
+#This is for importing all npm projects to snyk for testing
+
 # - script: snyk code test
 #     continueOnError: true
 #   displayName: 'Snyk Code Scan'
